@@ -1,0 +1,19 @@
+{
+    "name": "phpcraft/pdf",
+    "type": "library",
+    "description": "deals with PDF files creation for PHPCraft model",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vuk"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^0.7.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "PHPCraft\\PDF\\" : "src/"
+        }
+    }
+}
