@@ -19,6 +19,13 @@ interface PDFInterface
     public function setOption($name, $value);
     
     /**
+     * Sets more options at once
+     *
+     * @param array $options [option-name => option-value]
+     **/
+    public function setOptions($options);
+    
+    /**
      * Loads html code into PDF
      *
      * @param strin $html
@@ -34,6 +41,8 @@ interface PDFInterface
     
     /**
      * Streams to browser
+     *
+     * @param string $fileName
      **/
-    public function stream($stream);
+    public function stream($fileName);
 }

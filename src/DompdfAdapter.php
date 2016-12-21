@@ -12,15 +12,15 @@ use Dompdf\Options;
  */
 class DompdfAdapter implements PDFInterface
 {
-    private $pdf;
+    private $dompdf;
     
     /**
      * Constructor
      * @param Dompdf\Dompdf $dompdf
      **/
-    public function __contruct(Dompdf $dompdf)
+    public function __construct(Dompdf $dompdf)
     {
-        $this->pdf = $dompdf;
+        $this->dompdf = $dompdf;
     }
     
     /**
@@ -34,12 +34,23 @@ class DompdfAdapter implements PDFInterface
     }
     
     /**
+     * Sets more options at once
+     *
+     * @param array $options [option-name => option-value]
+     **/
+    public function setOptions($options)
+    {
+        $this->dompdf->set_options($options);
+    }
+    
+    /**
      * Loads html code into PDF
      *
      * @param strin $html
      **/
     public function loadHtml($html)
     {
+        $this->dompdf->loadHtml($html);
     }
     
     /**
@@ -53,8 +64,12 @@ class DompdfAdapter implements PDFInterface
     
     /**
      * Streams to browser
+     *
+     * @param string $fileName
      **/
-    public function stream($stream)
+    public function stream($fileName)
     {
+        $this->dompdf->render();
+        $this->dompdf->stream($fileName);
     }
 }
