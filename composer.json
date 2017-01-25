@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "dompdf/dompdf": "dev-master"
+        "dompdf/dompdf": "@dev"
     },
     "autoload": {
         "psr-4" : {
