@@ -8,6 +8,12 @@
             "name": "vuk"
         }
     ],
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/dompdf/dompdf"
+      }
+    ],
     "require": {
         "dompdf/dompdf": "@dev"
     },
