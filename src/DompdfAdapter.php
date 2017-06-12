@@ -72,4 +72,14 @@ class DompdfAdapter implements PDFInterface
         $this->dompdf->render();
         $this->dompdf->stream($fileName);
     }
+    
+    /**
+     * Outputs content as string
+     * @return string file content as a string
+     **/
+    public function output()
+    {
+        $this->dompdf->render();
+        return $this->dompdf->output();
+    }
 }
