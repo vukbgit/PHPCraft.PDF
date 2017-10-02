@@ -21,6 +21,8 @@ class DompdfAdapter implements PDFInterface
     public function __construct(Dompdf $dompdf)
     {
         $this->dompdf = $dompdf;
+        
+        
     }
     
     /**
@@ -41,6 +43,17 @@ class DompdfAdapter implements PDFInterface
     public function setOptions($options)
     {
         $this->dompdf->set_options($options);
+    }
+    
+    /**
+     * Sets papaer size and orientation
+     *
+     * @param string $size, something like 'A4'
+     * @param string $orientation 'portrait' | 'landscape'
+     **/
+    public function setPaper($size, $orientation)
+    {
+        $this->dompdf->setPaper($size, $orientation);
     }
     
     /**

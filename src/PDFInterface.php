@@ -26,6 +26,14 @@ interface PDFInterface
     public function setOptions($options);
     
     /**
+     * Sets papaer size and orientation
+     *
+     * @param string $size, something like 'A4'
+     * @param string $orientation tipically 'portrait' | 'landscape'
+     **/
+    public function setPaper($size, $orientation);
+    
+    /**
      * Loads html code into PDF
      *
      * @param strin $html
